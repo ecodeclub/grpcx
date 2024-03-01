@@ -39,6 +39,3 @@ e2e_up:
 .PHONY: e2e_down
 e2e_down:
 	docker compose -f .script/integration_test_compose.yml down
-mock:
-	mockgen -copyright_file=.license_header -package=mocks -destination=internal/mocks/pipeline.mock.go github.com/redis/go-redis/v9 Pipeliner
-	mockgen -copyright_file=.license_header -source=session/types.go -package=session -destination=session/provider.mock_test.go Provider
