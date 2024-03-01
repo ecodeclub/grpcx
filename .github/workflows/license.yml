@@ -1,4 +1,4 @@
-# Copyright 2021 ecodeclub
+# Copyright 2023 ecodeclub
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,6 +24,9 @@ jobs:
   check-license-lines:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Check License Lines
-        uses: kt3k/license_checker@v1.0.6
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: "1.40.4"
+      - uses: actions/checkout@v4
+      - name: Check license
+        run: deno run --allow-read https://deno.land/x/license_checker@v3.2.3/main.ts

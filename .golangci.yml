@@ -1,5 +1,4 @@
-#!/bin/sh
-# Copyright 2021 ecodeclub
+# Copyright 2023 ecodeclub
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,20 +11,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-# To use, store as .git/hooks/pre-commit inside your repository and make sure
-# it has execute permissions.
-#
-# This script does not handle file names that contain spaces.
 
-# Pre-commit configuration
-
-make check
-printf "执行检查中...\n"
-
-if [ $? -ne 0 ]; then
-  echo >&2 "[ERROR]: 有文件发生变更，请将变更文件添加到本次提交中"
-  exit 1
-fi
-
-exit 0
+run:
+  go: '1.21'
+  skip-dirs:
+    - .idea

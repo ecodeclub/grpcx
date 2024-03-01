@@ -1,4 +1,4 @@
-# Copyright 2021 ecodeclub
+# Copyright 2023 ecodeclub
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
-          go-version: ">=1.20.0"
+          go-version: '>=1.21.0'
 
       - name: Install goimports
         run: go install golang.org/x/tools/cmd/goimports@latest
